@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">JABODETABEK Wheater</string>
+    <string name="daerah">Region</string>
+    <string name="cuaca">Weather : %1$s</string>
+    <string name="koordinat">Coordinate : %1$s</string>
+    <string name="temperatur_rerate">Temperature : %1$s</string>
+    <string name="temperatur_maks">Temperature Maks. : %1$s</string>
+    <string name="temperatur_min">Temperature Min. : %1$s</string>
+    <string name="tekanan">Pressure : %1$s</string>
+    <string name="kelembapan">Humidity : %1$s</string>
+    <string name="kecepatan_angin">Wind Speed : %1$s</string>
+    <string name="pengelihatan">Visibility : %1$s</string>
+</resources>
