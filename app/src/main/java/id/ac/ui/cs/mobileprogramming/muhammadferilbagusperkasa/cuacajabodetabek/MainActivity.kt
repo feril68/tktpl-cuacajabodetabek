@@ -80,12 +80,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFragment(){
         val informasiCuacaListFragment = InformasiCuacaListFragment()
+        supportFragmentManager.popBackStack()
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainer, informasiCuacaListFragment).commit()
         val logApiCallViewModel = ViewModelProviders.of(this).get(LogApiCallViewModel::class.java)
         logApiCallViewModel.getLatestLogApiCall()?.observe(this, Observer<List<LogApiCallEntity>> {
             val textLogApiCallView: TextView = findViewById(R.id.textLogApiCall)
             try {
-                textLogApiCallView.text = "Last Update : " + it[0].timestamp.toString()
+                textLogApiCallView.text = this.resources.getString(R.string.pembaruan, it[0].timestamp.toString())
             } catch (e: Exception) {
                 textLogApiCallView.text = null
             }

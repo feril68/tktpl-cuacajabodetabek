@@ -32,11 +32,18 @@ class InformasiCuacaListAdapter(private val context: Context?, private val appli
 
     override fun onBindViewHolder(holder: InformasiCuacaViewHolder, position: Int) {
         val current: InformasiCuacaEntity = allInformasiCuacaList!![position]
-        val bitmap: Bitmap? = LoadIconUtil(application).loadIcon(current.icon)
+        var bitmap: Bitmap?
+        try{
+            bitmap = LoadIconUtil(application).loadIcon(current.icon)
+        } catch (nullException : NullPointerException){
+            bitmap = null
+        }
         val resource : Resources? = context!!.resources
         holder.daerahTextView?.text = current.daerah
         holder.cuacaTextView?.text = resource!!.getString(R.string.cuaca, current.cuaca)
         holder.temperaturTextView?.text = resource.getString(R.string.temperatur_rerate, current.temperaturRerata.toString())
+        holder.kelembapanTextView?.text = resource.getString(R.string.kelembapan, current.kelembapan.toString())
+        holder.tekananTextView?.text = resource.getString(R.string.tekanan, current.tekanan.toString())
         holder.imageView?.setImageBitmap(bitmap)
         holder.cardView?.setOnClickListener(View.OnClickListener {
             val informasiCuacaDetailFragment = InformasiCuacaDetailFragment()
@@ -66,6 +73,8 @@ class InformasiCuacaListAdapter(private val context: Context?, private val appli
         val daerahTextView: TextView? = informasiCuacaView.findViewById(R.id.textDaerah)
         val cuacaTextView: TextView? = informasiCuacaView.findViewById(R.id.textCuaca)
         val temperaturTextView: TextView? = informasiCuacaView.findViewById(R.id.textTemperatur)
+        val tekananTextView: TextView? = informasiCuacaView.findViewById(R.id.textTekanan)
+        val kelembapanTextView: TextView? = informasiCuacaView.findViewById(R.id.textKelembapan)
         val imageView: ImageView? = informasiCuacaView.findViewById(R.id.imageView)
         val cardView : CardView? = informasiCuacaView.findViewById(R.id.card_view)
     }

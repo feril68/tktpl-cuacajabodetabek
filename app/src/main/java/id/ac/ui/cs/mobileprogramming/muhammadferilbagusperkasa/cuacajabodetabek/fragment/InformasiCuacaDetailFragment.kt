@@ -53,6 +53,9 @@ class InformasiCuacaDetailFragment : Fragment() {
             view.findViewById<TextView>(R.id.textDetailTemperaturMin).text =
                     resource.getString(R.string.temperatur_min, informasiCuacaDetail.temperaturMin.toString())
 
+            view.findViewById<TextView>(R.id.textDetailKecepatanAngin).text =
+                    resource.getString(R.string.kecepatan_angin, informasiCuacaDetail.kecepatanAngin.toString())
+
             val bitmap1: Bitmap? = LoadIconUtil(activity!!.application).loadIcon(informasiCuacaDetail.icon)
             view.findViewById<ImageView>(R.id.imageViewDetail).setImageBitmap(bitmap1)
         }catch (exception :Exception){

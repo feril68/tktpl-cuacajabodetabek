@@ -28,7 +28,7 @@ class AsyncTaskApiCall(private var application: Application) : AsyncTask<Void, V
             "en"
         }
         val request: Request = Request.Builder()
-                .url("http://api.openweathermap.org/data/2.5/group?id=$stringIdAreaGroup&lang=$localeLanguage&appid=63fcf1ce1c302ff0f1447db2fc1f943e")
+                .url("http://api.openweathermap.org/data/2.5/group?id=$stringIdAreaGroup&units=metric&lang=$localeLanguage&appid=63fcf1ce1c302ff0f1447db2fc1f943e")
                 .build()
          return try {
             val response : Response = client.newCall(request).execute()

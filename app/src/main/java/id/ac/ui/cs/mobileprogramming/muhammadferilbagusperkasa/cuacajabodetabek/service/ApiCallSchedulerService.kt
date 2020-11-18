@@ -16,14 +16,14 @@ class ApiCallSchedulerService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val t = Thread {
+        val threadSchedulerService = Thread {
             while (running) {
                 AsyncTaskApiCall(application).execute()
                 Log.e("Executed", Calendar.getInstance().time.toString())
                 Thread.sleep(30000)
             }
         }
-        t.start()
+        threadSchedulerService.start()
         return START_STICKY
     }
 

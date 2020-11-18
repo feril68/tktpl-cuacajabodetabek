@@ -10,8 +10,7 @@ import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.
 
 class NetworkChangeReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        val connectivityManager = context
-            .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         val wifi = connectivityManager
             .getNetworkInfo(ConnectivityManager.TYPE_WIFI)
@@ -19,15 +18,15 @@ class NetworkChangeReceiver : BroadcastReceiver() {
         val mobile = connectivityManager
             .getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
 
-        if (wifi.isConnected || mobile.isConnected) {
+        if (wifi?.isConnected!! || mobile?.isConnected!!) {
             Log.e("status inet", "true")
-            val intent = Intent(context, ApiCallSchedulerService::class.java)
-            context.startService(intent)
+            val intentApiCall = Intent(context, ApiCallSchedulerService::class.java)
+            context.startService(intentApiCall)
         }
         else{
             Log.e("status inet", "false")
-            val intent = Intent(context, ApiCallSchedulerService::class.java)
-            context.stopService(intent)
+            val intentApiCall = Intent(context, ApiCallSchedulerService::class.java)
+            context.stopService(intentApiCall)
         }
     }
 }

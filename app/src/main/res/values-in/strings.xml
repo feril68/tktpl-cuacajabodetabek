@@ -2,12 +2,13 @@
     <string name="app_name">Cuaca JABODETABEK</string>
     <string name="daerah">Daerah</string>
     <string name="cuaca">Cuaca : %1$s</string>
-    <string name="koordinat">Koordinat : %1$s</string>
-    <string name="temperatur_rerate">Temperatur : %1$s</string>
-    <string name="temperatur_maks">Temperatur Maks. : %1$s</string>
-    <string name="temperatur_min">Temperatur Min. : %1$s</string>
-    <string name="tekanan">Tekanan : %1$s</string>
-    <string name="kelembapan">Kelembapan : %1$s</string>
-    <string name="kecepatan_angin">Kecepatan Angin : %1$s</string>
-    <string name="pengelihatan">Pengelihatan : %1$s</string>
+    <string name="koordinat">Koordinat : (%1$s)</string>
+    <string name="temperatur_rerate">Temperatur : %1$s \u2103</string>
+    <string name="temperatur_maks">Temperatur Maks. : %1$s \u2103</string>
+    <string name="temperatur_min">Temperatur Min. : %1$s \u2103</string>
+    <string name="tekanan">Tekanan : %1$s hPa</string>
+    <string name="kelembapan">Kelembapan : %1$s\%%</string>
+    <string name="kecepatan_angin">Kecepatan Angin : %1$s m/s</string>
+    <string name="pengelihatan">Pengelihatan : %1$s meter</string>
+    <string name="pembaruan">Pembaruan Terakhir : %1$s</string>
 </resources>

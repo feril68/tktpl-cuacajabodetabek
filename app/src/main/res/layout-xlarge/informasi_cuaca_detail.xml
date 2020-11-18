@@ -12,145 +12,147 @@
 
         <ImageView
             android:id="@+id/imageViewDetail"
-            android:layout_width="97dp"
-            android:layout_height="97dp"
+            android:layout_width="231dp"
+            android:layout_height="231dp"
+            android:contentDescription="@string/app_name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.09"
-            tools:srcCompat="@tools:sample/avatars"
-            android:contentDescription="@string/app_name" />
+            app:layout_constraintVertical_bias="0.124"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textDetailDaerah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/daerah"
-            android:textSize="24sp"
+            android:textSize="50sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageViewDetail"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.923" />
-
-        <TextView
-            android:id="@+id/textDetailKoordinat"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/koordinat"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailDaerah"
-            app:layout_constraintVertical_bias="0.2" />
-
-        <TextView
-            android:id="@+id/textDetailCuaca"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/cuaca"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailKoordinat"
-            app:layout_constraintVertical_bias="0.030" />
-
-        <TextView
-            android:id="@+id/textDetailTemperatur"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/temperatur_rerate"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailCuaca"
-            app:layout_constraintVertical_bias="0.040" />
-
-        <TextView
-            android:id="@+id/textDetailTemperaturMin"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/temperatur_min"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailTemperatur"
-            app:layout_constraintVertical_bias="0.040" />
+            app:layout_constraintVertical_bias="0.886" />
 
         <TextView
             android:id="@+id/textDetailTemperaturMax"
-            android:layout_width="250dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:text="@string/temperatur_maks"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDetailTemperaturMin"
-            app:layout_constraintVertical_bias="0.050" />
+            app:layout_constraintVertical_bias="0.07" />
 
         <TextView
-            android:id="@+id/textDetailTekanan"
-            android:layout_width="200dp"
+            android:id="@+id/textDetailKoordinat"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:text="@string/tekanan"
-            android:textSize="18sp"
+            android:text="@string/koordinat"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.246"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailTemperaturMax"
-            app:layout_constraintVertical_bias="0.037" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailDaerah"
+            app:layout_constraintVertical_bias="0.295" />
 
         <TextView
-            android:id="@+id/textDetailKelembaman"
-            android:layout_width="250dp"
+            android:id="@+id/textDetailCuaca"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/kelembapan"
+            android:text="@string/cuaca"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintHorizontal_bias="0.124"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailTekanan"
-            app:layout_constraintVertical_bias="0.050" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailKoordinat"
+            app:layout_constraintVertical_bias="0.046" />
 
         <TextView
-            android:id="@+id/textDetailKecepatanAngin"
-            android:layout_width="250dp"
+            android:id="@+id/textDetailTemperatur"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="@string/kecepatan_angin"
+            android:text="@string/temperatur_rerate"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailKelembaman"
-            app:layout_constraintVertical_bias="0.050" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailCuaca"
+            app:layout_constraintVertical_bias="0.035" />
+
+        <TextView
+            android:id="@+id/textDetailTemperaturMin"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="@string/temperatur_min"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.124"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDetailTemperatur"
+            app:layout_constraintVertical_bias="0.042" />
 
         <TextView
             android:id="@+id/textDetailPengelihatan"
-            android:layout_width="250dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:text="@string/pengelihatan"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDetailKecepatanAngin"
-            app:layout_constraintVertical_bias="0.060" />
+            app:layout_constraintVertical_bias="0.069" />
+
+        <TextView
+            android:id="@+id/textDetailKelembaman"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="@string/kelembapan"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.125"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDetailTekanan"
+            app:layout_constraintVertical_bias="0.057" />
+
+        <TextView
+            android:id="@+id/textDetailKecepatanAngin"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="@string/kecepatan_angin"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.125"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDetailKelembaman"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:id="@+id/textDetailTekanan"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tekanan"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.125"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDetailTemperaturMax"
+            app:layout_constraintVertical_bias="0.069" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
