@@ -11,4 +11,10 @@
     <string name="kecepatan_angin">Kecepatan Angin : %1$s m/s</string>
     <string name="pengelihatan">Pengelihatan : %1$s meter</string>
     <string name="pembaruan">Pembaruan Terakhir : %1$s</string>
+    <string name="tentang">Tentang</string>
+    <string name="isi_tentang">Muhammad Feril Bagus Perkasa \n 1706075054</string>
+    <string name="segarkan">Segarkan</string>
+    <string name="status_koneksi">Tidak ada koneksi</string>
+    <string name="permission_message">Mohon untuk menyalakan permission storage \n karena dibutuhkan untuk menampilkan data</string>
+
 </resources>

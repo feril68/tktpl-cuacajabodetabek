@@ -11,4 +11,9 @@
     <string name="kecepatan_angin">Wind Speed : %1$s m/s</string>
     <string name="pengelihatan">Visibility : %1$s meter</string>
     <string name="pembaruan">Last Update : %1$s</string>
+    <string name="tentang">About</string>
+    <string name="isi_tentang">Muhammad Feril Bagus Perkasa \n 1706075054</string>
+    <string name="segarkan">Refresh</string>
+    <string name="status_koneksi">No connection</string>
+    <string name="permission_message">Please turn on storage permission \n its needed to show data</string>
 </resources>

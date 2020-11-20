@@ -1,13 +1,20 @@
 package id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -16,6 +23,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.facebook.stetho.Stetho
+import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.api.AsyncTaskApiCall
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.broadcastreciever.NetworkChangeReceiver
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.database.entity.LogApiCallEntity
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.fragment.InformasiCuacaListFragment
@@ -51,8 +59,16 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             val textLogApiCallView: TextView = findViewById(R.id.textLogApiCall)
-            textLogApiCallView.text = "Mohon untuk menyalakan permission storage \n karena dibutuhkan untuk menampilkan data"
+            textLogApiCallView.text = resources.getText(R.string.permission_message)
         }
+        val tentangButton : Button = findViewById(R.id.tentang)
+        tentangButton.setOnClickListener(View.OnClickListener {
+            showTentangDialog()
+        })
+        val segarkanButton : Button = findViewById(R.id.segarkan)
+        segarkanButton.setOnClickListener(View.OnClickListener {
+            refreshButtonEvent()
+        })
     }
 
     override fun onResume() {
@@ -93,6 +109,20 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    private fun showTentangDialog(){
+        val imageView = ImageView(this)
+        imageView.setImageResource(R.drawable.logo)
+        val alertBuilder = AlertDialog.Builder(this)
+        alertBuilder.setTitle(resources.getText(R.string.tentang))
+        alertBuilder.setMessage(resources.getText(R.string.isi_tentang))
+        alertBuilder.setNeutralButton("Ok") { dialog, which ->
+            dialog.cancel()
+        }
+        alertBuilder.setView(imageView)
+        val showAlert = alertBuilder.create()
+        showAlert.show()
+    }
+
     private fun checkPermission(): Boolean {
         val result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
         return result == PackageManager.PERMISSION_GRANTED
@@ -100,6 +130,23 @@ class MainActivity : AppCompatActivity() {
 
     private fun requestUngrentedPermission() {
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE), 5054)
+    }
+
+    private fun refreshButtonEvent(){
+        val connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val wifi = connectivityManager
+                .getNetworkInfo(ConnectivityManager.TYPE_WIFI)
+
+        val mobile = connectivityManager
+                .getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
+
+        if (wifi?.isConnected!! || mobile?.isConnected!!) {
+            AsyncTaskApiCall(application).execute()
+        }
+        else{
+            Toast.makeText(this, resources.getText(R.string.status_koneksi), Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onBackPressed() {

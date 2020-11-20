@@ -30,11 +30,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/segarkan"
         android:layout_width="126dp"
         android:layout_height="65dp"
         android:layout_marginBottom="16dp"
-        android:text="Refresh"
+        android:text="@string/segarkan"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,17 +44,17 @@
         app:layout_constraintVertical_bias="0.515" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/tentang"
         android:layout_width="126dp"
         android:layout_height="65dp"
         android:layout_marginEnd="140dp"
         android:layout_marginBottom="20dp"
-        android:text="Tentang"
+        android:text="@string/tentang"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/segarkan"
         app:layout_constraintTop_toBottomOf="@+id/fragmentContainer"
         app:layout_constraintVertical_bias="0.586" />
 </androidx.constraintlayout.widget.ConstraintLayout>
