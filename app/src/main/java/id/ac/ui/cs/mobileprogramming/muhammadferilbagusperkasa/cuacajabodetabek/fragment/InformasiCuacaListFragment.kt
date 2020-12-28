@@ -14,12 +14,15 @@ import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.adapter.InformasiCuacaListAdapter
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.database.entity.InformasiCuacaEntity
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.viewmodel.InformasiCuacaViewModel
-import java.lang.Exception
 
 class InformasiCuacaListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var informasiCuacaListAdapter: InformasiCuacaListAdapter
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         Log.e("cek fragment 1", "masuk")
         val view = inflater.inflate(R.layout.informasi_cuaca_list, container, false)
         recyclerView = view.findViewById(R.id.recyclerviewCuaca)
@@ -29,13 +32,15 @@ class InformasiCuacaListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(view.context)
 
         val informasiCuacaViewModel = ViewModelProviders.of(this).get(InformasiCuacaViewModel::class.java)
-        informasiCuacaViewModel.getAllInformasiCuaca()?.observe(this, Observer<List<InformasiCuacaEntity>> {
-            try{
-                informasiCuacaListAdapter.setInformasiCuaca(it)
-            } catch (exception : Exception){
-                exception.printStackTrace()
-            }
-        })
+        informasiCuacaViewModel.getAllInformasiCuaca()?.observe(
+            this,
+            Observer<List<InformasiCuacaEntity>> {
+                try {
+                    informasiCuacaListAdapter.setInformasiCuaca(it)
+                } catch (exception: Exception) {
+                    exception.printStackTrace()
+                }
+            })
         return view
     }
 }

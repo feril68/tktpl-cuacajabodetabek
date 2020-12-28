@@ -26,7 +26,9 @@ import com.facebook.stetho.Stetho
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.api.AsyncTaskApiCall
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.broadcastreciever.NetworkChangeReceiver
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.database.entity.LogApiCallEntity
+import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.fragment.AboutFragment
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.fragment.InformasiCuacaListFragment
+import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.fragment.OpenglFragment
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.service.ApiCallSchedulerService
 import id.ac.ui.cs.mobileprogramming.muhammadferilbagusperkasa.cuacajabodetabek.viewmodel.LogApiCallViewModel
 
@@ -63,7 +65,8 @@ class MainActivity : AppCompatActivity() {
         }
         val tentangButton : Button = findViewById(R.id.tentang)
         tentangButton.setOnClickListener(View.OnClickListener {
-            showTentangDialog()
+            supportFragmentManager.beginTransaction()
+                .addToBackStack(null).replace(R.id.fragmentContainer, OpenglFragment()).commit()
         })
         val segarkanButton : Button = findViewById(R.id.segarkan)
         segarkanButton.setOnClickListener(View.OnClickListener {
