@@ -10,6 +10,7 @@ import java.util.*
 
 class ApiCallSchedulerService : Service() {
     private var running = true
+    private var counter = 0
 
     override fun onBind(intent: Intent?): IBinder? {
         return null
@@ -19,6 +20,10 @@ class ApiCallSchedulerService : Service() {
         val threadSchedulerService = Thread {
             while (running) {
                 AsyncTaskApiCall(application).execute()
+                counter++
+                var i = Intent("apicall_counter")
+                i.putExtra("counter", counter)
+                sendBroadcast(i)
                 Log.e("Executed", Calendar.getInstance().time.toString())
                 Thread.sleep(30000)
             }

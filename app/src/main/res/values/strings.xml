@@ -16,4 +16,6 @@
     <string name="segarkan">Refresh</string>
     <string name="status_koneksi">No connection</string>
     <string name="permission_message">Please turn on storage permission \n its needed to show data</string>
+    <string name="nama">Feril</string>
+    <string name="nomor_hoki">Lucky Number : %1$s</string>
 </resources>
