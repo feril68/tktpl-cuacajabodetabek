@@ -16,5 +16,6 @@
     <string name="segarkan">Segarkan</string>
     <string name="status_koneksi">Tidak ada koneksi</string>
     <string name="permission_message">Mohon untuk menyalakan permission storage \n karena dibutuhkan untuk menampilkan data</string>
-
+    <string name="nama">Feril</string>
+    <string name="nomor_hoki">Nomor Hoki : %1$s</string>
 </resources>
